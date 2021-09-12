@@ -7,6 +7,8 @@ import ru.zotov.mockgoogleplay.dto.RequestPaymentCheckedDto;
 import ru.zotov.mockgoogleplay.dto.ResponsePaymentCheckedDto;
 import ru.zotov.mockgoogleplay.model.StateChecked;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
@@ -19,7 +21,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RequiredArgsConstructor
 @RequestMapping(value = "payment", produces = APPLICATION_JSON_VALUE, consumes = APPLICATION_JSON_VALUE)
 public class CheckPayController {
-    private static final List<Integer> delayTimerList = List.of(1, 1, 1, 1, 10, 100, 1000, 10000, 1000000);
+    private static final List<Integer> delayTimerList = Arrays.asList(1, 1, 1, 1, 10, 100, 1000, 10000, 1000000);
     private final StateChecked stateChecked;
 
     /**
